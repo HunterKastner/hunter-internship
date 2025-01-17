@@ -14,11 +14,6 @@ const HotCollections = () => {
     fetchNfts();
   }, []);
 
-  useEffect(() => {
-    console.log("NFTs State:", nfts);
-    console.log("IsLoading State:", isLoading);
-  }, [nfts, isLoading]);
-
   async function fetchNfts() {
     setIsLoading(true);
     const { data } = await axios.get(
@@ -73,7 +68,9 @@ const HotCollections = () => {
                       </div>
                       <div className="nft_coll_info">
                         <Skeleton width="150px" height="20px" />
-                        <Skeleton width="100px" height="20px" />
+                      </div>
+                      <div className="nft_coll_info">
+                        <Skeleton width="150px" height="20px" />
                       </div>
                     </div>
                   </div>
