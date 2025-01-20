@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import SubHeader from "../images/subheader.jpg";
 import ExploreItems from "../components/explore/ExploreItems";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const Explore = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Any Comment
   }, []);
 
   return (
@@ -30,7 +35,12 @@ const Explore = () => {
         </section>
 
         <section aria-label="section">
-          <div className="container">
+          <div
+            className="container"
+            data-aos="zoom-in-up"
+            data-aos-easing="ease-in"
+            data-aos-duration="500"
+          >
             <div className="row">
               <ExploreItems />
             </div>

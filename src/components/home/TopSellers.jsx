@@ -21,12 +21,18 @@ const Topauthorss = () => {
   }
 
   return (
-    <section id="section-popular" className="pb-5">
+    <section
+      id="section-popular"
+      className="pb-5"
+      data-aos="slide-right"
+      data-aos-easing="ease-in"
+      data-aos-duration="800"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">
-              <h2>Top authorss</h2>
+              <h2>Top authors</h2>
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
@@ -36,7 +42,11 @@ const Topauthorss = () => {
                 ? Array.from({ length: 12 }).map((_, index) => (
                     <li key={index}>
                       <div className="author_list_pp">
-                        <Skeleton width="50px" height="50px" borderRadius="50%" />
+                        <Skeleton
+                          width="50px"
+                          height="50px"
+                          borderRadius="50%"
+                        />
                       </div>
                       <div className="author_list_info">
                         <Skeleton width="100px" height="20px" />
@@ -47,7 +57,7 @@ const Topauthorss = () => {
                 : authors.map((author, index) => (
                     <li key={index}>
                       <div className="author_list_pp">
-                      <Link to={`/author/${authors.authorId}`}>
+                        <Link to={`/author/${authors.authorId}`}>
                           <img
                             className="lazy pp-author"
                             src={author.authorImage}
@@ -57,7 +67,7 @@ const Topauthorss = () => {
                         </Link>
                       </div>
                       <div className="author_list_info">
-                      <Link to={`/author/${author.authorId}`}>
+                        <Link to={`/author/${author.authorId}`}>
                           {author.authorName}
                         </Link>
                         <span>{author.price} ETH</span>

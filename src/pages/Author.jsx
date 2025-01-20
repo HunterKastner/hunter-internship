@@ -3,7 +3,10 @@ import AuthorBanner from "../images/author_banner.jpg";
 import AuthorItems from "../components/author/AuthorItems";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Skeleton from "../components/UI/Skeleton";
+import Skeleton from "../components/UI/Skeleton";import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const Author = () => {
   const { authorId } = useParams();
@@ -11,6 +14,10 @@ const Author = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [follows, setFollows] = useState(0);
   const [isFollowing, setIsFollowing] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const fetchAuthorData = async () => {
@@ -50,7 +57,7 @@ const Author = () => {
                 className="col-md-12"
                 data-aos="fade-in"
                 data-aos-easing="ease-in"
-                data-aos-duration="700"
+                data-aos-duration="900"
               >
                 <div className="d_profile de-flex">
                   <div className="de-flex-col">

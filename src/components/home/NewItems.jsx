@@ -39,7 +39,14 @@ const NewItems = () => {
   };
 
   return (
-    <section id="section-items" className="no-bottom">
+    <section
+      id="section-items"
+      className="no-bottom"
+      data-aos="fade-in"
+      data-aos-easing="ease-in"
+      data-aos-duration="900"
+      data-aos-delay="600"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -69,7 +76,9 @@ const NewItems = () => {
                     </div>
                   </div>
                 ))
-              : newItems.map((item) => <NewItemCard key={item.id} item={item} />)}
+              : newItems.map((item) => (
+                  <NewItemCard key={item.id} item={item} />
+                ))}
           </OwlCarousel>
         </div>
       </div>

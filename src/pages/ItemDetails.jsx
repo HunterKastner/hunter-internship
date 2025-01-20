@@ -20,9 +20,19 @@ const ItemDetails = () => {
     fetchNftData();
   }, [itemId]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div id="wrapper">
-      <div className="no-bottom no-top" id="content">
+      <div
+        className="no-bottom no-top"
+        id="content"
+        data-aos="zoom-in"
+        data-aos-easing="ease-in"
+        data-aos-duration="900"
+      >
         <div id="top"></div>
         <section aria-label="section" className="mt90 sm-mt-0">
           <div className="container">
@@ -44,8 +54,16 @@ const ItemDetails = () => {
                     <>
                       <Skeleton width="80%" height="40px" borderRadius="5px" />
                       <div className="item_info_counts">
-                        <Skeleton width="80px" height="20px" borderRadius="5px" />
-                        <Skeleton width="80px" height="20px" borderRadius="5px" />
+                        <Skeleton
+                          width="80px"
+                          height="20px"
+                          borderRadius="5px"
+                        />
+                        <Skeleton
+                          width="80px"
+                          height="20px"
+                          borderRadius="5px"
+                        />
                       </div>
                       <Skeleton width="100%" height="80px" borderRadius="5px" />
                       <div className="d-flex flex-row">
@@ -53,11 +71,19 @@ const ItemDetails = () => {
                           <h6>Owner</h6>
                           <div className="item_author">
                             <div className="author_list_pp">
-                              <Skeleton width="50px" height="50px" borderRadius="50%" />
+                              <Skeleton
+                                width="50px"
+                                height="50px"
+                                borderRadius="50%"
+                              />
                               <i className="fa fa-check"></i>
                             </div>
                             <div className="author_list_info">
-                              <Skeleton width="100px" height="20px" borderRadius="5px" />
+                              <Skeleton
+                                width="100px"
+                                height="20px"
+                                borderRadius="5px"
+                              />
                             </div>
                           </div>
                         </div>
@@ -68,11 +94,19 @@ const ItemDetails = () => {
                           <h6>Creator</h6>
                           <div className="item_author">
                             <div className="author_list_pp">
-                              <Skeleton width="50px" height="50px" borderRadius="50%" />
+                              <Skeleton
+                                width="50px"
+                                height="50px"
+                                borderRadius="50%"
+                              />
                               <i className="fa fa-check"></i>
                             </div>
                             <div className="author_list_info">
-                              <Skeleton width="100px" height="20px" borderRadius="5px" />
+                              <Skeleton
+                                width="100px"
+                                height="20px"
+                                borderRadius="5px"
+                              />
                             </div>
                           </div>
                         </div>
@@ -81,14 +115,20 @@ const ItemDetails = () => {
                         <div className="nft-item-price">
                           <img src={EthImage} alt="" />
                           <span>
-                            <Skeleton width="80px" height="24px" borderRadius="5px" />
+                            <Skeleton
+                              width="80px"
+                              height="24px"
+                              borderRadius="5px"
+                            />
                           </span>
                         </div>
                       </div>
                     </>
                   ) : (
                     <>
-                      <h2>{nftData.title} #{nftData.tag}</h2>
+                      <h2>
+                        {nftData.title} #{nftData.tag}
+                      </h2>
                       <div className="item_info_counts">
                         <div className="item_info_views">
                           <i className="fa fa-eye"></i>
@@ -106,12 +146,18 @@ const ItemDetails = () => {
                           <div className="item_author">
                             <div className="author_list_pp">
                               <Link to={`/author/${nftData.ownerId}`}>
-                                <img className="lazy" src={nftData.ownerImage} alt="" />
+                                <img
+                                  className="lazy"
+                                  src={nftData.ownerImage}
+                                  alt=""
+                                />
                                 <i className="fa fa-check"></i>
                               </Link>
                             </div>
                             <div className="author_list_info">
-                              <Link to={`/author/${nftData.ownerId}`}>{nftData.ownerName}</Link>
+                              <Link to={`/author/${nftData.ownerId}`}>
+                                {nftData.ownerName}
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -123,7 +169,11 @@ const ItemDetails = () => {
                           <div className="item_author">
                             <div className="author_list_pp">
                               <Link to={`/author/${nftData.creatorId}`}>
-                                <img className="lazy" src={nftData.creatorImage} alt="" />
+                                <img
+                                  className="lazy"
+                                  src={nftData.creatorImage}
+                                  alt=""
+                                />
                                 <i className="fa fa-check"></i>
                               </Link>
                             </div>
