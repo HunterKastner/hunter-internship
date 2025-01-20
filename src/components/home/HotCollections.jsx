@@ -42,7 +42,14 @@ const HotCollections = () => {
   };
 
   return (
-    <section id="section-collections" className="no-bottom">
+    <section
+      id="section-collections"
+      className="no-bottom"
+      data-aos="fade-in"
+      data-aos-easing="ease-in"
+      data-aos-duration="900"
+      data-aos-delay="600"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -79,7 +86,7 @@ const HotCollections = () => {
                   <div className="item" key={index}>
                     <div className="nft_coll">
                       <div className="nft_wrap">
-                        <Link to="/item-details">
+                      <Link to={`/item-details/${nft.nftId}`}>
                           <img
                             src={nft.nftImage}
                             className="lazy img-fluid"
@@ -88,7 +95,7 @@ const HotCollections = () => {
                         </Link>
                       </div>
                       <div className="nft_coll_pp">
-                        <Link to="/author">
+                      <Link to={`/author/${nft.authorId}`}>
                           <img
                             className="lazy pp-coll"
                             src={nft.authorImage}
