@@ -9,6 +9,7 @@ AOS.init();
 const Explore = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    // FROM MAIN!!! DO NOT REMOVE
     // Any Comment
   }, []);
 
